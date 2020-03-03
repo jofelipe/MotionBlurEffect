@@ -155,4 +155,15 @@ $(document).ready(function() {
     }
 
     setGalleryPos(0,false);
+	
+    //auto
+    const interval = setInterval(function () {
+        var selectedSlide = $('.gallery-pagination-dot-selected');
+        if (selectedSlide.is(':last-child')) {
+            $('.gallery-pagination-dot:first-child').trigger('click');
+        } else {
+            selectedSlide.next().trigger('click');
+        }
+    }, 5000);
+	
 })
